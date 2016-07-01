@@ -1,0 +1,21 @@
+<img src="assets/images/Western.gif">
+
+
+{{#if  isResulting }}
+
+<pre id="out"></pre>
+
+<div class="row">
+  <div class="large-12 columns">
+  	<br>
+    <a href="#" class="button tiny notmain" {{action 'done'}}>Done</a>
+  </div>
+</div>
+
+{{else}}
+	<br>
+    <a href="#" class="button tiny notmain" {{action 'distributeResults'}}>Distribute Results</a>
+{{/if}}
+
+
+{{view-distributionresults}}

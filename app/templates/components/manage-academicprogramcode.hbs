@@ -1,0 +1,77 @@
+{{#if  isManagingProgram }}
+<div class="row">
+  <div class="large-12 columns">
+    <br>
+    <h4 align="center">Add Admission Rule to Program</h4>
+    <hr/>
+    <br>
+    <fieldset>
+      <legend>Please use the form below</legend>
+      <br>
+      <form>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Admission Rule</span>
+              </div>
+              <div class="small-9 columns">
+                <select onchange={{action (mut selectedAdmissionrule) value="target.value"}}>
+                  {{#each admissionruleModel as |admissionruleChoice|}}
+                  <option value={{admissionruleChoice.id}} selected={{eq selectedAdmissionrule admissionruleChoice}}>{{admissionruleChoice.description}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="row">
+
+        <!--ALAN EDIT-->
+
+        <div class="large-12 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Program</span>
+              </div>
+              <div class="small-9 columns">
+                <select onchange={{action (mut selectedAcademicprogramcode) value="target.value"}}>
+                  {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
+                  <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramChoice}}>{{academicprogramcodeChoice.name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <!--END EDIT-->
+          
+       <!--   <div class="large-12 columns">
+            <div class="row collapse prefix-radius">
+              <div class="small-3 columns">
+                <span class="prefix">Program Name</span>
+              </div>
+              <div class="small-9 columns">
+                {{input value=name type="text" placeholder="enter program name" }}
+              </div>
+            </div>
+            <br>
+          </div>-->
+        </div>
+
+      </form>
+    </fieldset>
+    <br>
+    <a href="#" class="button primary tiny" {{action 'saveP'}}>Save</a>
+    <a href="#" class="button primary tiny" {{action 'cancel'}}>Cancel</a>
+  </div>
+</div>
+{{else}}
+<div class="row">
+  <div class="large-12 columns">
+    <a href="#" class="button tiny notmain" {{action 'addProgram'}}>Add Admission Rule to Program</a>
+  </div>
+</div>
+{{/if}}
